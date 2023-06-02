@@ -42,7 +42,7 @@ export class FormularioComponent {
 
   onSubmit(){
     if(this.proveedorForm.valid){
-      
+
     }
   }
 }
