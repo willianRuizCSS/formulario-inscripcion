@@ -1,7 +1,7 @@
 
 <p-steps [model]="steps" [activeIndex]="currentStep"></p-steps>
 
-<div [ngSwitch]="currentStep">
+<div class="container" [ngSwitch]="currentStep">
   <div *ngSwitchCase="0">
     <!-- Contenido del primer paso -->
     <div class="form-group">
