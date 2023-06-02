@@ -1,1 +1,41 @@
-<p>formulario works!</p>
+
+<p-steps [model]="steps" [activeIndex]="currentStep"></p-steps>
+
+<div [ngSwitch]="currentStep">
+  <div *ngSwitchCase="0">
+    <!-- Contenido del primer paso -->
+    <div class="form-group">
+
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre">
+      </div>
+      <label for="tipoProveedor">Tipo de Proveedor</label>
+      <select class="form-control" id="tipoProveedor" formControlName="tipoProveedor">
+        <option value="natural">Natural</option>
+        <option value="juridica">Jurídica</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="CategoriaTributaria"> Categoría Tributaria</label>
+      <select class="form-control" formControlName="CategoriaTributaria">
+        <option value="Declarante">Declarante</option>
+        <option value="AgenteRetenedor">Agente Retenedor</option>
+        <option value="Autoretendor">Auto retendor</option>
+      </select>
+    </div>
+    <!-- Agrega más campos del primer paso aquí -->
+  </div>
+
+  <div *ngSwitchCase="1">
+    <!-- Contenido del segundo paso -->
+    <!-- Agrega los campos del segundo paso aquí -->
+  </div>
+
+  <!-- Agrega más casos para más pasos según sea necesario -->
+
+  <div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="previousStep()">Anterior</button>
+    <button type="button" class="btn btn-primary" (click)="nextStep()" [disabled]="!proveedorForm.valid">Siguiente</button>
+  </div>
+</div>
